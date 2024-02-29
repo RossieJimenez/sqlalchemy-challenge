@@ -22,7 +22,7 @@ This project involves analyzing climate data using Python, SQLAlchemy, Pandas, a
 Create a Flask API based on the analysis:
 
 1.Homepage:
-     * Welcome message and list of available routes.
+    * Welcome message and list of available routes.
 
 2. List of Routes:
    * /api/v1.0/precipitation: Return JSON representation of the last 12 months of precipitation data.

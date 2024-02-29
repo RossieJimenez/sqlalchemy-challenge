@@ -31,7 +31,6 @@ measurement = Base.classes.measurement
 # Create our session (link) from Python to the DB
 session = Session(engine)
 
-last_twelve_months = '2016-08-23'
 #################################################
 # Flask Setup
 #################################################
@@ -106,33 +105,7 @@ def temperature_start(start):
     return jsonify(temperature_data)
 
 
-# @app.route("/api/v1.0/<start>/<end>")
-# def get_temps_start_end(start, end):
-#         # Convert the start date string to a datetime object
-#     start_date = dt.datetime.strptime(start, '2016-08-23')
-#     end_date = dt.datetime.strptime(end, '2017-08-23')
 
-#     # Perform a query to calculate TMIN, TAVG, and TMAX for dates greater than or equal to the start date
-#     results = session.query(func.min(measurement.tobs), func.avg(measurement.tobs), func.max(measurement.tobs)).\
-#         filter(measurement.date >= start_date).all()
-    
-#     results_two = session.query(func.min(measurement.tobs), func.avg(measurement.tobs), func.max(measurement.tobs)).\
-#         filter(measurement.date <= end_date).all()
-
-#     # Extract the results and create a dictionary
-#     temperature_data = {
-#         "TMIN": results[0][0],
-#         "TAVG": results[0][1],
-#         "TMAX": results[0][2]
-#     }
-
-#     temperatures_data = {
-#         "TMIN": results_two[0][0],
-#         "TAVG": results_two[0][1],
-#         "TMAX": results_two[0][2]
-#     }
-
-#     return jsonify(temperature_data, temperatures_data)
 
 @app.route("/api/v1.0/<start>/<end>")
 def get_temps_start_end(start, end):
